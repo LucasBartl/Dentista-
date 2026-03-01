@@ -1,0 +1,40 @@
+.flex{
+    display: flex;
+}
+.aling-center{
+    align-items: center;
+}
+.pd-page{
+    padding-left: 1rem;
+    padding-right: 2rem;
+}
+
+.mg{
+    margin-bottom: 3rem;
+}
+.img{
+    height: 10rem;
+}
+
+.side-a{
+    font-family: "Public Sans", sans-serif;
+    font-size: 1.1rem;
+
+}
+.box{
+    align-items: center;
+    padding: 1.5rem;
+    background-color:rgb(191, 219, 254);
+    justify-content: center;
+    border-radius: 1rem;
+    height: 4rem;
+    width: 13rem;
+    box-sizing: border-box;
+    overflow: hidden;
+
+
+}
+.box:hover{
+    scale: 1.05;
+     background-color:rgb(159, 200, 250);
+}
