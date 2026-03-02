@@ -5,6 +5,26 @@
 
 }
 
-body{
+body, html{
+    height: 100vh;
+    width: 100%;
     background-color: #ffffff;
+    overflow: hidden
+}
+input{
+   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+input::placeholder{
+    color: rgb(73, 72, 72);
+}
+input:focus{
+    outline: none;
+    box-shadow: none;
+}
+textarea{
+    font-family: "Dancing Script", cursive;
+}
+textarea:focus{
+    outline: none;
+    box-shadow: none;
 }

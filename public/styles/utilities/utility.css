@@ -1,0 +1,30 @@
+.margiBottomAnotacoes{
+    margin-bottom: 1.5rem;
+}
+
+.margiBottomBook{
+    margin-bottom: 2.5rem;
+}
+.marginB{
+    margin-bottom: 1rem;
+}
+
+.writing{
+    font-size: 1.5rem;
+}
+
+.button-style{
+    margin-top: 6rem;
+}
+
+.ajuste{
+    border: 1px solid red;
+}
+
+.button-style {
+
+    display: flex;
+    justify-content: flex-end; /* direita */
+    gap: 10px;
+    margin-top: 7rem;
+}

@@ -1,0 +1,17 @@
+.boxTodo{
+    overflow: hidden;
+    height: 85vh;
+    border-radius: .75rem;
+    padding: 2rem 2rem;
+    background-color: #f8f5e9;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+}
+.bg{
+    background-color: #fdfcf7;
+
+}
+.bdcolor{
+   border:1px solid #e5e1cb; 
+
+}
