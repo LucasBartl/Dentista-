@@ -1,11 +1,11 @@
 <?php require "partial/main.php"; ?>
-<form action="POST">
+<form method="POST">
     <div class="flex gap-2">
-        <div class="boxTodo flex flex-column " style="width: 70%;">
+        <div class="boxTodo flex flex-column " style="width: 100%;">
             <div class="">
                 <div class="flex flex-column">
-                    <label for="titulo" class=" margiBottomAnotacoes fs-2">Título</label>
-                    <input type="text" placeholder="Digite o título" style="width: 20%;" class="rounded-2 p-1  bdcolor bg text-dark margiBottomBook p-1">
+                    <label for="title" class=" margiBottomAnotacoes fs-2">Título</label>
+                    <input type="text" name="title" placeholder="Digite o título" style="width: 100%; max-width: 300px;" class="rounded-2 p-2  bdcolor bg text-dark margiBottomBook p-1">
                 </div>
                 <div>
                     <textarea name="notepad" id="notepad" class="rounded-2 p-3 writing bdcolor bg margiBottomAnotacoes" style="width: 100%; height: 40vh;">
@@ -23,9 +23,16 @@
                     </div>
                 </div>
 
-                <div class="flex button-style gap-2 button-style">
-                    <button type="reset" class="rounded-2 p-1  bdcolor bg text-dark margiBottomBook" style="width: 10%;">Cancelar</button>
-                    <button type="submit" class="rounded-2 p-1  bdcolor bg text-dark margiBottomBook" style="width: 10%;">Salvar</button>
+                <div class="flex gap-2 justify-content-end mt-5 " style="width: 100%;">
+                    <button type="reset"
+                        class="rounded-2 p-2 bdcolor bg text-dark " style="width: 13%;" >
+                        Cancelar
+                    </button>
+                    <button type="submit"
+                        class="rounded-2 p-2 bdcolor bg text-dark" style="width: 13%;">
+                        Salvar
+                    </button>
+
                 </div>
             </div>
         </div>
