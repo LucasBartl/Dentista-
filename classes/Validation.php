@@ -1,8 +1,8 @@
 <?php
 
-class Validacoes
+class Validation
 {
-    private $validations = [];
+    public $validations = [];
 
     static function validate($rules, $datas)
     {
@@ -15,15 +15,15 @@ class Validacoes
 
                 $valueField = $datas[$field];
                 if ($rule == 'confirmed') {
-                    $validation->$rules($field, $valueField, $datas["confirmed_{$field}"]);
+                    $validation->$rule($field, $valueField, $datas["confirmed_{$field}"]);
                 } else if (str_contains($rule, ':')) {
 
                     $temp = explode(':', $rule);
                     $rule = $temp[0];
                     $ruleEX = $temp[1];
-                    $validation->$rules($ruleEX, $rule, $valueField);
+                    $validation->$rule($ruleEX, $rule, $valueField);
                 } else {
-                    $validation->$rules($field, $valueField);
+                    $validation->$rule($field, $valueField);
                 }
             }
             return $validation;

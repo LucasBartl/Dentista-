@@ -1,5 +1,5 @@
 <?php require "partial/main.php"; ?>
-<form method="POST">
+<form method="POST" action="/create-note">
     <div class="flex gap-2">
         <div class="boxTodo flex flex-column " style="width: 100%;">
             <div class="">
