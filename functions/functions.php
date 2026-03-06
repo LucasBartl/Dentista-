@@ -12,8 +12,12 @@ function dump($dump)
     echo "<pre/>";
 };
 
-function view($view)
+function view($view, $data = [])
 {
+    foreach ($data as $key => $value) {
+        $$key = $value;
+    }
+
 
     require "../viewer/templates/app.view.php";
 }
@@ -28,6 +32,7 @@ function abort($code)
 function flash(){
     return new Flash;
 }
+
 function config($key =null ) 
 {
     $config = require "../config.php";

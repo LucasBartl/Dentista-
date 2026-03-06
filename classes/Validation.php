@@ -3,7 +3,7 @@
 class Validation
 {
     public $validations = [];
-
+    
     static function validate($rules, $datas)
     {
 
