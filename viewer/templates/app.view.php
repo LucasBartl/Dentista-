@@ -63,9 +63,7 @@
         </div>
         <!--  -->
         <div class="flex-grow-1">
-            <header class="pd-page  py-3 d-flex justify-content-between align-items-center">
-                <h1>Nome Pagina</h1>
-
+            <header class="pd-page  py-3 d-flex justify-content-end align-items-center">
                 <div class="d-flex  align-items-center">
                     <ul class="d-flex gap-1.5 align-items-center">
                         <ol><a class="text-dark text-decoration-none" href="/notification"><img src="./images/sino.png" alt=""></a></ol>

@@ -4,14 +4,20 @@
             <label for="name">Nome cliente:</label>
             <input type="text" name="name" class="rounded-2 p-2  bdcolor bg text-dark  p-1">
         </div>
-        <div class="flex flex-column   fs-4 gap-2">
-            <label for="birth">Data de nascimento:</label>
-            <input type="date" name="birth" class="rounded-2 p-2  bdcolor bg text-dark">
+        <div>
+
         </div>
-        <div class="flex flex-column   fs-4 gap-2">
-            <label for="email">Email cliente:</label>
-            <input type="email" name="email" class="rounded-2 p-2  bdcolor bg text-dark">
+        <div class="flex gap-3" style="width: 100%;">
+            <div class="flex flex-column   fs-4 gap-2 " style="width: 30%; ">
+                <label for="birth" >Data de nascimento:</label>
+                <input type="date" name="birth" class="rounded-2 p-2  bdcolor bg text-dark">
+            </div>
+            <div class="flex flex-column fs-4 gap-2" style="width: 70%;">
+                <label for="email">Email cliente:</label>
+                <input type="email" name="email" class="rounded-2 p-2  bdcolor bg text-dark">
+            </div>
         </div>
+
         <div class="flex flex-column   fs-4 gap-2">
             <label for="tel">Telefone de contato:</label>
             <input type="tel" name="tel" maxlength="11" class="rounded-2 p-2  bdcolor bg text-dark" placeholder="(xx)xxxxx-xxxx">
