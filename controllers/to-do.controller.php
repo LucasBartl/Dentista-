@@ -1,6 +1,6 @@
 <?php
 
-
+dd($_SERVER);
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $notes = $database->query(
         query: "select * from anotacoes ",

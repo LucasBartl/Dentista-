@@ -4,3 +4,9 @@
 .mg-b{
     margin-bottom: 1rem;
 }
+.delete:hover{
+
+    scale: 1.1;
+    border: 1px solid #ffc1c1;
+    background-color: #ff7f7f;
+}
