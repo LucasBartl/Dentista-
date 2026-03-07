@@ -1,5 +1,6 @@
 <?php
 require "../models/notes.php";
+require "../models/client.php";
 session_start();
 require "../classes/flash.php";
 require "../functions/functions.php";
