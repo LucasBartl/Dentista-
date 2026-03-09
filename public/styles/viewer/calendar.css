@@ -1,0 +1,14 @@
+#calendar {
+    width: 100%;
+    height:85vh;
+    margin: 0 auto;
+}
+.none{
+    display: none;
+}
+
+.boxCalendar{
+    border: solid 1px #BBDEFB;
+    height: 50%;
+    width: 50%;
+}
