@@ -81,6 +81,11 @@ class Validation
             $this->validations[] = "A $field precisa ter menos que 30 caracteres ";
         }
     }
+    private function cpf($value, $field){
+        if($value > 11){
+            $this->validations[] = "O $field não pode passar de 11 caracteres";
+        }
+    }
     public function  validateFailed($pending = null) {
 
         $key = 'validations';

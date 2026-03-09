@@ -9,7 +9,7 @@
         </div>
         <div class="flex gap-3" style="width: 100%;">
             <div class="flex flex-column   fs-4 gap-2 " style="width: 30%; ">
-                <label for="birth" >Data de nascimento:</label>
+                <label for="birth">Data de nascimento:</label>
                 <input type="date" name="birth" class="rounded-2 p-2  bdcolor bg text-dark">
             </div>
             <div class="flex flex-column fs-4 gap-2" style="width: 70%;">
@@ -18,10 +18,15 @@
             </div>
         </div>
 
-        <div class="flex flex-column   fs-4 gap-2">
+        <div class="flex flex-column   fs-4 gap-2" >
             <label for="tel">Telefone de contato:</label>
             <input type="tel" name="tel" maxlength="11" class="rounded-2 p-2  bdcolor bg text-dark" placeholder="(xx)xxxxx-xxxx">
         </div>
+        <div class="flex flex-column fs-4 gap-2" >
+            <label for="cpf">CPF:</label>
+            <input type="cpf" name="cpf" maxlength="11" class="rounded-2 p-2  bdcolor bg text-dark" placeholder="xxx.xxx.xxx-xx">
+        </div>
+
         <div class="flex gap-2 justify-content-end mbottom " style="width: 100%;">
             <button type="reset"
                 class="rounded-2 p-2 bdcolor bg text-dark  " style="width: 13%;">
