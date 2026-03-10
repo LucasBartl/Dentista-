@@ -1,35 +1,37 @@
 <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
 
-<form action="">
-    <div>
-        <div>
-            <label for="">Data de agendamento</label>
-            <input type="date">
+<div id="modal" class="modal-agendamento none">
+    <form action="" id="register" style="width: 100%;">
+        <div class="container">
+            <div class="flex flex-column gap-2 ">
+                <label for="" class="fs-5">Data de agendamento</label>
+                <input type="date" class="p-2 rounded-2 bd">
+            </div>
+            <div class="flex flex-column  gap-2">
+                <label for="event" class="fs-5">Procedimento:</label>
+                <input type="text" name="event" class="p-2 rounded-2 bd">
+            </div>
+            <div class="flex flex-column  gap-2">
+                <label for="" class="fs-5">Cliente:</label>
+                <input type="text" name="client" class="p-2 rounded-2 bd">
+            </div>
+            <div class="flex flex-column  gap-2">
+                <label for="" class="fs-5">Dentista:</label>
+                <select name="" id="" class="rounded-2 bd ">
+                    <option value="one">Jose Dente</option>
+                    <option value="two">Priscilla Aparelho</option>
+                </select>
+            </div>
+            <div class="flex flex-column  gap-2">
+                <label for="" class="fs-5 ">Observação:</label>
+                <textarea name="" id="" class="p-2 rounded-2 bd"></textarea>
+            </div>
         </div>
-        <div>
-            <label for="event">Procedimento:</label>
-            <input type="text" name="event">
-        </div>
-        <div>
-            <label for="">Cliente:</label>
-            <input type="text" name="client">
-        </div>
-        <div>
-            <label for="">Dentista:</label>
-            <select name="" id="">
-                <option value="one">Jose Dente</option>
-                <option value="two">Priscilla Aparelho</option>
-            </select>
-        </div>
-        <div>
-            <label for="">Observação:</label>
-            <textarea name="" id=""></textarea>
-        </div>
-    </div>
-</form>
+    </form>
+</div>
 
-<div id="calendar" class=" none"></div>
+<div id="calendar"></div>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
 
@@ -45,20 +47,27 @@
                 dayGridMonth: 'Agendar',
                 today: 'Hoje'
             },
+            customButtons: {
+                agendar: {
+                    text: 'Agendar',
+                    click: function() {
+                        const modal = document.querySelector('#modal');
+                        modal.classList.remove("none");
+                    }
+                }
+            },
             headerToolbar: {
                 left: 'prev,next today',
                 center: 'title',
-                left: 'dayGridMonth',
-            }
-        });
+                left: 'agendar',
+            },
 
+        });
 
 
         calendar.render();
     });
-
-    const dayGridMonth = document.addEventListener('click', () => {
-        dayGridMonth.classList.add("boxCalendar");
     
-    })
+
+
 </script>

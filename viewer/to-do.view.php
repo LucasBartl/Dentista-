@@ -9,7 +9,7 @@
                         <input type="text" name="title" placeholder="Digite o título" style="width: 100%; max-width: 300px;" class="rounded-2 p-2  bdcolor bg text-dark margiBottomBook p-1">
                     </div>
                     <div>
-                        <textarea name="notepad" id="notepad" class="rounded-2 p-3 writing bdcolor bg margiBottomAnotacoes" style="width: 100%; height: 40vh;">
+                        <textarea name="notepad" id="notepad" class="textarea rounded-2 p-3 writing bdcolor bg margiBottomAnotacoes" style="width: 100%; height: 40vh;">
 
                 </textarea>
                     </div>

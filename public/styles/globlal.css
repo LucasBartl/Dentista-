@@ -22,7 +22,7 @@ input:focus{
     outline: none;
     box-shadow: none;
 }
-textarea{
+.textarea{
     font-family: "Dancing Script", cursive;
 }
 textarea:focus{
