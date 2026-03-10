@@ -11,18 +11,29 @@
     padding: 1.3rem;
     border: 1px solid #e5e7eb;
     border-radius: 1rem;
-    height: 55vh;
+    height: 60vh;
     width: 400px;
     margin: 0 auto;
-    background-color: #ffffff; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
-.bd{
+
+.bd {
     border: 1px solid #f2f2f2;
 }
+
 .container label {
     text-align: left;
 }
+
+#btn-register {
+    width: 5rem;
+    height: 2rem;
+    border-radius: .5rem;
+    border: 1px solid #BBDEFB;
+    background-color: #90CAF9;
+}
+
 .none {
     display: none;
 }
@@ -33,7 +44,7 @@
     width: 50%;
 }
 
-.modal-agendamento{
+.modal-agendamento {
     position: fixed;
     top: 50%;
     left: 50%;

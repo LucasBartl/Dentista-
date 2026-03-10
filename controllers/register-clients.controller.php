@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'tel' => ['require','unique'],
         'cpf' => ['require', 'unique'  ]
     ], $_POST);
+    
     if ($validation->validateFailed('todo')) {
         $_SESSION['validations'] = $validation->validations;
         header('location: /home');
