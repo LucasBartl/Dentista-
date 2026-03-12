@@ -19,7 +19,6 @@
 </head>
 
 <body>
-
     <div class="d-flex" style="min-height: 100vh;">
         <!-- Sidebar -->
         <div class=" py-3 px-3 " style="width: 250px;">
@@ -74,9 +73,6 @@
             <main class=" flex-grow-1 p-4 main ">
                 <?php require "../viewer/{$view}.view.php" ?>
             </main>
-
-
-
         </div>
 
     </div>

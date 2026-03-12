@@ -1,7 +1,7 @@
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
+ 
     $validation = Validation::validate([
 
         'client' => ['require'],
@@ -11,9 +11,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'time' => ['require'],
         'obs' => ['require']
     ], $_POST);
-    if($validation->validateFailed('appointments')) {
+    if ($validation->validateFailed('appointments')) {
         $_SESSION['validations'] = $validation->validations;
-        header('location: /home');
+        header('location: /appointments');
         exit();
     }
     $scheduled = $database->query(
@@ -27,9 +27,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'dentist' => $_POST['dentist'],
             'obs' => $_POST['obs'],
         ]
-        )->fetchAll();
+    )->fetchAll();
 
-    view('appointments', ['scheduled' => $scheduled] );
+    header('Location: /appointments');
+    exit();
 }
+
+
 
 view('appointments');

@@ -21,8 +21,8 @@
             </div>
             <div class="flex  gap-2 ">
                 <div>
-                    <label for="" class="fs-5" >Data:</label>
-                    <input type="date" name="date" t class="p-2 rounded-2 bd" >
+                    <label for="" class="fs-5">Data:</label>
+                    <input type="date" name="date" t class="p-2 rounded-2 bd">
                 </div>
                 <div>
                     <label for="" class="fs-5" style="width: 50%;">Horário</label>
@@ -31,32 +31,47 @@
             </div>
             <div class="flex flex-column  gap-2">
                 <label for="" class="fs-5 ">Observação:</label>
-                <textarea name="obs" id="" class="p-2 rounded-2 bd" ></textarea>
+                <textarea name="obs" id="" class="p-2 rounded-2 bd"></textarea>
             </div>
-            <div class="flex justify-content-end align-items-center">
-                <button id="btn-register" class="">
+            <div class="flex justify-content-end align-items-center gap-1">
+                <button class="btn-register" name="return">
+                    voltar
+                </button>
+                <button class="btn-register">
                     enviar
                 </button>
             </div>
         </div>
     </form>
 </div>
-
 <div id="calendar"></div>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-
         let calendarEl = document.getElementById('calendar');
-
         let calendar = new FullCalendar.Calendar(calendarEl, {
             initialView: 'dayGridMonth',
             locale: 'pt-br',
-            events: [{
+            events: "search-appointments",
+            eventContent: function(info) {
 
-            }],
+                let container = document.createElement("div");
+                container.className = "box-agendamento";
+                container.classList = "flex";
+                let info = info.event.title;
+                let titleDiv = document.createElement("div");
+
+                container.innerHTML = `
+                        <div class="titulo">${info.event.title}</div>
+                        <div class="hora">${info.timeText}</div>
+                        <button class="" ><img src="images/excluir.png" ></button>
+                    `;
+                return {
+                    domNodes: [container]
+                };
+            },
             buttonText: {
                 dayGridMonth: 'Agendar',
-                today: 'Hoje'
+                today: 'Hoje',
             },
             customButtons: {
                 agendar: {
@@ -64,18 +79,16 @@
                     click: function() {
                         const modal = document.querySelector('#modal');
                         modal.classList.remove("none");
+
                     }
-                }
+                },
             },
             headerToolbar: {
                 left: 'prev,next today',
                 center: 'title',
                 left: 'agendar',
             },
-
         });
-
-
         calendar.render();
     });
 </script>
