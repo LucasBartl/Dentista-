@@ -44,6 +44,8 @@
         </div>
     </form>
 </div>
+
+
 <div id="calendar"></div>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -55,20 +57,25 @@
             eventContent: function(info) {
 
                 let container = document.createElement("div");
-                container.className = "box-agendamento";
-                container.classList = "flex";
-                let info = info.event.title;
-                let titleDiv = document.createElement("div");
+                container.className = "box-agendamento gap-1 click ";
+                //container.classList = "containerCalendar";
 
                 container.innerHTML = `
-                        <div class="titulo">${info.event.title}</div>
-                        <div class="hora">${info.timeText}</div>
-                        <button class="" ><img src="images/excluir.png" ></button>
-                    `;
+                        <div >${info.timeText}</div>
+                        <div>${info.event.title}</div>
+                `;
+
+                container.addEventListener("click", () => {
+                    const modalInfo = document.querySelector("#modal-info");
+                    modalInfo.classList.remove("none");
+                    
+                })
+
                 return {
                     domNodes: [container]
                 };
             },
+
             buttonText: {
                 dayGridMonth: 'Agendar',
                 today: 'Hoje',

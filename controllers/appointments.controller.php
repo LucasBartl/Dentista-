@@ -1,7 +1,7 @@
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
- 
+    $user_id = $_GET['id'];
     $validation = Validation::validate([
 
         'client' => ['require'],
@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     }
     $scheduled = $database->query(
-        query: "insert into agendamentos (date, time, procedures, client, dentist, obs) VALUES (:date, :time, :procedures, :client, :dentist, :obs) ",
+        query: "insert into agendamentos (date, time, procedures, client, dentist, obs, user_id) VALUES (:date, :time, :procedures, :client, :dentist, :obs, :user_id) ",
         class: Procedures::class,
         params: [
             'date' => $_POST['date'],
@@ -26,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'client' => $_POST['client'],
             'dentist' => $_POST['dentist'],
             'obs' => $_POST['obs'],
+            'user_id' => $user_id
         ]
     )->fetchAll();
 
