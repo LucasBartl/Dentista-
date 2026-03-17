@@ -4,9 +4,16 @@
 <div id="modal" class="modal-agendamento none">
     <form action="" method="POST" id="register" style="width: 100%;">
         <div class="container">
-            <div class="flex flex-column  gap-2">
+            <div class="flex flex-column  gap-2" style="width: 98%;">
                 <label for="" class="fs-5">Cliente:</label>
-                <input type="text" name="client" class="p-2 rounded-2 bd">
+                <select name="user_id" id=""  class="rounded-2 bd " >
+                    <?php foreach ( $selectClient as $select) : ?>
+                        <option value=<?= $select["id"]; ?>>
+                            <?= $select["name"]; ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+                <!-- <input type="text" name="client" class="p-2 rounded-2 bd"> -->
             </div>
             <div class="flex flex-column  gap-2">
                 <label for="event" class="fs-5">Procedimento:</label>

@@ -1,37 +1,32 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
-    $searchScheduled = $database->query(
-        query: "select id, client, date, time, procedures, dentist, obs  from agendamentos ",
+    $query = $database->query(
+        query: "select c.id, c.name, ag.user_id from 
+                    clientes as c
+                        inner join 
+                            agendamentos as ag on
+                                c.id = ag.user_id "
     )->fetchAll();
 
-    $event = [];
+    foreach ($query as $client) {
 
-    foreach ($searchScheduled as $schedules) {
-        $event[] = [
-            'id'=>$schedules['id'],
-            'title' =>" " .$schedules['procedures'] . "   -   " . $schedules['client'],
-            'start' => $schedules['date'] . "T" . $schedules['time']
-        ];
+        $user_id = $client['id'];
+
+        $searchScheduled = $database->query(
+            query: "select id, user_id, date, time, procedures, dentist, obs  from agendamentos",
+        )->fetchAll(PDO::FETCH_ASSOC);
+
+        $event = [];
+
+        foreach ($searchScheduled as $schedules) {
+            $event[] = [
+                'id' => $schedules['id'],
+                'title' => " " . $schedules['procedures'] . "   -   " . $client['name'],
+                'start' => $schedules['date'] . "T" . $schedules['time']
+            ];
+        }
     }
     header('Content-type: application/json');
     echo json_encode($event);
-}
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-
-    $removeScheduled = $database->query(
-        query: "delete from agendamentos  where id = :id",
-        params: [
-            'id' => $_POST['id']
-        ]
-    )->fetchAll();
-
-    $remove = [];
-
-    $remove[] = $removeScheduled;
-    dd($remove);
-    header('Content-type: application/json');
-    echo json_encode($remove);
-    header('location: appointments');
 }
