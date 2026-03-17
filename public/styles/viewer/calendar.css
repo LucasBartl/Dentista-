@@ -3,7 +3,9 @@
     height: 85vh;
     margin: 0 auto;
 }
-
+.hidden{
+    overflow: hidden;
+}
 
 .container {
     display: flex;

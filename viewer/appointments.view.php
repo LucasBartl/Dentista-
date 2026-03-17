@@ -64,7 +64,7 @@
             eventContent: function(info) {
 
                 let container = document.createElement("div");
-                container.className = "box-agendamento gap-1 click ";
+                container.className = "box-agendamento gap-1 click hidden ";
                 //container.classList = "containerCalendar";
 
                 container.innerHTML = `
