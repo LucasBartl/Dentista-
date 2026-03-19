@@ -5,12 +5,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         'name' => ['require'],
         'birth' => ['require'],
-        'email' => ['require', 'min', 'email', 'unique'],
-        'tel' => ['require','unique'],
-        'cpf' => ['require', 'unique'  ]
+        'email' => ['require', 'min', 'email', 'unique:clientes'],
+        'tel' => ['require','unique:clientes'],
+        'cpf' => ['require', 'unique:clientes'  ]
     ], $_POST);
     
-    if ($validation->validateFailed('todo')) {
+    if ($validation->validateFailed('register-clients')) {
         $_SESSION['validations'] = $validation->validations;
         header('location: /home');
         exit();

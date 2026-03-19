@@ -6,10 +6,10 @@
             </div>
             <div>
                 <img src="./images/lupa.png" alt="">
-                <input type="text" name="search" class="rounded-2 p-2  bdcolor bg text-dark  p-1" style="height:32px; ">
+                <input type="text" name="search" id="search" class="rounded-2 p-2  bdcolor bg text-dark  p-1" >
             </div>
             <div>
-                <p>Digite o nome, telefone ou CPF do paciente para iniciar a busca.</p>
+                <p>Digite o  CPF do paciente para iniciar a busca.</p>
             </div>
         </div>
     </form>
@@ -29,3 +29,10 @@
         </div>
     </form>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('#search').mask('000.000.000-00');
+});
+</script>

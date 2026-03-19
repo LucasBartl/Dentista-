@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $params = [];
 
     if (!empty($_POST['search'])) {
-        $query .= " AND (name LIKE :search OR email LIKE :search OR cpf LIKE :search)";
+        $query .= " AND (cpf LIKE :search )";
         $params['search'] = "%" . $_POST['search'] . "%";
     }
 

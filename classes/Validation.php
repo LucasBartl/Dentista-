@@ -37,7 +37,7 @@ class Validation
         $db = new Database(config('database'));
 
         $result = $db->query(
-            query: "select * from $table where $value = :value ",
+            query: "select * from $table where $field = :value ",
             params: ['value' => $value]
         )->fetch();
         if ($result) {

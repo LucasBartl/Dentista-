@@ -5,7 +5,7 @@ $controller = str_replace('/', '', parse_url($_SERVER['REQUEST_URI'])['path']);
 
 //Verificao de existencia 
 
-if(!$controller) $controller = 'home';
+if(!$controller) $controller = 'login';
 
 if(!file_exists("../controllers/{$controller}.controller.php")){
     abort(404);

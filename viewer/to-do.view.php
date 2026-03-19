@@ -1,4 +1,3 @@
-<?php require "partial/main.php"; ?>
 <div class="flex gap-2" style="width: 100%;" >
     <form method="POST" action="/create-note" style="width: 100%;" >
         <div class="flex "  style="width: 100%;">
@@ -39,11 +38,11 @@
             </div>
         </div>
     </form>
-    <form method="get" style="width: 30%;">
+    <form method="get" style="width: 30%;" >
         <div class="boxTodo">
             <h2 class="mg-his">Historico:</h2>
             <?php foreach ($notes as $note) : ?>
-                <div class="flex flex-column " style="width: 100%; ">
+                <div class="flex flex-column " style="width: 100%;">
                     <div class="mg-b  p-2 bdcolor bg rounded-2" style="width: 100%; height: 5rem;">
                         <a class="click fs-a side-a text-dark " href="/note?id=<?=$note->id ;?>"><?= $note->title; ?></a>
                         <div class="flex justify-content-between mt ">

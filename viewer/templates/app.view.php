@@ -18,62 +18,9 @@
     <title>Projeto dentista</title>
 </head>
 
-<body>
-    <div class="d-flex" style="min-height: 100vh;">
-        <!-- Sidebar -->
-        <div class=" py-3 px-3 " style="width: 250px;">
-            <div class="align-items-center py-2 flex flex-column border-red " style="width: 200px;">
-                <a class="mg"><img class="img" src="./images/dente.png" alt=""></a>
-                <div>
-                    <ul class="nav flex-column gap-3  ">
-                        <li>
-                            <div class="flex gap-2 align-items-center box">
-                                <img src="./images/calendario.png" alt="">
-                                <a class="side-a nav-item text-dark text-decoration-none" href="/appointments">Agendamentos</a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="flex gap-2 align-items-center box">
-                                <img src="./images/lapis.png" alt="">
-                                <a class="side-a nav-item text-dark text-decoration-none" href="/to-do">Anotações</a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="flex gap-2 align-items-center box">
-                                <img src="./images/editar.png" alt="">
-                                <a class="side-a nav-item text-dark text-decoration-none" href="/register-clients">Novo cliente</a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="flex gap-2 align-items-center box">
-                                <img src="./images/procurar.png" alt="">
-                                <a class="side-a nav-item text-dark text-decoration-none" href="/search-clients">Buscar cliente</a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="flex gap-2 align-items-center box">
-                                <img src="./images/do-utilizador.png" alt="">
-                                <a class="side-a nav-item text-dark text-decoration-none" href="/dentists">Dentistas</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!--  -->
-        <div class="flex-grow-1">
-            <header class="pd-page  py-3 d-flex justify-content-end align-items-center">
-                <div class="d-flex  align-items-center">
-                    <ul class="d-flex gap-1.5 align-items-center">
-                        <ol><a class="text-dark text-decoration-none" href="/notification"><img src="./images/sino.png" alt=""></a></ol>
-                        <ol><a class="text-dark text-decoration-none" href="/login">Olá, usuário</a></ol>
-                    </ul>
-                </div>
-            </header>
-            <main class=" flex-grow-1 p-4 main ">
-                <?php require "../viewer/{$view}.view.php" ?>
-            </main>
-        </div>
+<body class="ccolor ">
+    <div>
+        <?php require "../viewer/{$view}.view.php" ?>
 
     </div>
 
