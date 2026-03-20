@@ -5,7 +5,7 @@
                 <h1>Seja bem vindo !</h1>
             </div>
             <div class="flex flex-column gap-1">
-                <label for="email" class="fs-5 ">Email</label>
+                <label for="email" class="fs-5 ">Emaill</label>
                 <input type="email" name="emailLogon" id="emailLogon" placeholder="Digite seu email">
             </div>
             <div class="flex flex-column gap-1">
