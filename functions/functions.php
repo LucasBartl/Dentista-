@@ -17,9 +17,12 @@ function view($view, $data = [])
     foreach ($data as $key => $value) {
         $$key = $value;
     }
-
-
-    require "../viewer/templates/app.view.php";
+    if ($_SESSION['auth']) {
+        require "../viewer/partial/main.view.php";
+    }
+    if (!isset($_SESSION['auth'])) {
+        require "../viewer/templates/app.view.php";
+    }
 }
 
 function abort($code)
@@ -29,16 +32,26 @@ function abort($code)
     view($code);
     die();
 }
-function flash(){
+function flash()
+{
     return new Flash;
 }
 
-function config($key =null ) 
+function config($key = null)
 {
     $config = require "../config.php";
 
-    if($config > 0 ){
+    if ($config > 0) {
         return $config[$key];
     }
     return $config;
+}
+
+function auth()
+{
+    if (!isset($_SESSION['auth'])) {
+        header("location: /login");
+        exit();
+    }
+    return $_SESSION['auth'];
 }

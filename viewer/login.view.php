@@ -10,7 +10,7 @@
             </div>
             <div class="flex flex-column gap-1">
                 <label for="email" class="fs-5 ">Senha</label>
-                <input type="text" name="passwordLogon" id="passwordLogon" placeholder="Digite sua senha">
+                <input type="password" name="passwordLogon" id="passwordLogon" placeholder="Digite sua senha">
             </div>
             <div class="flex justify-content-end ">
                 <button class="tx btn-logon" style="width: 25%;">
@@ -19,6 +19,4 @@
             </div>
         </div>
     </div>
-
-
 </form>

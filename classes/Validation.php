@@ -50,6 +50,17 @@ class Validation
             $this->validations[] = "{$field} precisa ser informado! ";
         }
     }
+    private function maxError($field, $value){
+        
+        $erros = [];
+        if(!$value){
+            $erros[] = $value; 
+        }
+        if(count($erros)==3){
+            echo("bloqueado");
+            $this->validations[] ="{$field} foi bloqueada";
+        }
+    }
     private function email($field, $value)
     {
         if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
