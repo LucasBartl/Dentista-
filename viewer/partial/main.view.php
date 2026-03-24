@@ -41,7 +41,7 @@
                         <li>
                             <div class="flex gap-2 align-items-center box">
                                 <img src="./images/do-utilizador.png" alt="">
-                                <a class="side-a nav-item text-dark text-decoration-none" href="/dentists">Dentistas</a>
+                                <a class="side-a nav-item text-dark text-decoration-none" href="/dentists">Colaboradores</a>
                             </div>
                         </li>
                     </ul>

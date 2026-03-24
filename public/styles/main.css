@@ -1,9 +1,9 @@
-.main{
+.main {
   overflow: hidden;
-  background-color:#f5f5fa;
-  border-radius: .75rem;    
+  background-color: #f5f5fa;
+  border-radius: .75rem;
   padding-inline: 1rem;
-  max-height: 63rem;
-  width: 99% ;
+  height: 53rem;
+  width: 99%;
   border: 1px solid #cfcfd3;
 }

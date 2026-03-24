@@ -17,7 +17,7 @@ function view($view, $data = [])
     foreach ($data as $key => $value) {
         $$key = $value;
     }
-    if ($_SESSION['auth']) {
+    if (isset($_SESSION['auth'])) {
         require "../viewer/partial/main.view.php";
     }
     if (!isset($_SESSION['auth'])) {
