@@ -1,13 +1,13 @@
 <div class="boxTodo ">
     <header class="">
         <div class="flex headerCollaborators ">
-            <h6 id="admin" class="flex bxHeader align-items-center  justify-content-center">Administrativo</h6>
+            <h6 id="<?= $admin ?>"  class="admin flex bxHeader align-items-center  justify-content-center">Administrativo</h6>
             <h6 value="terceirizados" class="flex bxHeader  align-items-center justify-content-center">Terceirizados</h6>
             <h6 value="dentistas" class="flex bxHeader  align-items-center justify-content-center">Dentistas</h6>
         </div>
     </header>
-
-    <div id="collaborators" class=" none" style="height: 88%;">
+    <?php foreach ($collaborator as  $collaborato) :?>
+        <div id="collaborators" class=" none" style="height: 88%;">
         <div class="containerColab">
             <div>
                 <div class="flex  flex-column  cardDentist   ">
@@ -18,6 +18,7 @@
                 </div>
             </div>
         </div>
+    <?php endforeach; ?>
     </div>
 </div>
 
@@ -34,7 +35,7 @@
 
 
     $(document).ready(function() {
-        $('#admin').click(function() {
+        $('.admin').click(function() {
             const collaborators = document.querySelector('#collaborators');
             collaborators.classList.remove('none');
         });
