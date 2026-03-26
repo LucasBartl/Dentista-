@@ -1,7 +1,7 @@
 .containerColab {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
 }
 
 .cardDentist {
@@ -10,7 +10,9 @@
     border-radius: .6rem;
     height: 59%;
     width: 100%;
-
+    border: 1px solid #3B82F6;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08),
+    0 4px 10px rgba(59, 130, 246, 0.12);
 }
 
 .description {
@@ -57,6 +59,7 @@
     background-color: #eeeadd;
     color: black;
 }
-#collaborators{
+
+#collaborators {
     margin-top: 2rem;
 }
