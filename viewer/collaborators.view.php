@@ -1,43 +1,74 @@
-<div class="boxTodo ">
-    <header class="">
-        <div class="flex headerCollaborators ">
-            <h6 id="<?= $admin ?>"  class="admin flex bxHeader align-items-center  justify-content-center">Administrativo</h6>
-            <h6 value="terceirizados" class="flex bxHeader  align-items-center justify-content-center">Terceirizados</h6>
-            <h6 value="dentistas" class="flex bxHeader  align-items-center justify-content-center">Dentistas</h6>
+<div class="boxTodo">
+    <header>
+        <div class="flex headerCollaborators">
+            <h6 data-target="ad" class="bxHeader flex align-items-center justify-content-center">Administrativo</h6>
+            <h6 data-target="tz" class="bxHeader flex align-items-center justify-content-center">Terceirizados</h6>
+            <h6 data-target="dt" class="bxHeader flex align-items-center justify-content-center">Dentistas</h6>
         </div>
     </header>
-    <?php foreach ($collaborator as  $collaborato) :?>
-        <div id="collaborators" class=" none" style="height: 88%;">
+
+    <!-- Administrativo -->
+    <div id="ad" class="collaborators none">
         <div class="containerColab">
-            <div>
-                <div class="flex  flex-column  cardDentist   ">
-                    <div class=" flex  flex-column hidden "><img src="./images/jose.png" alt=""></div>
-                    <div class=" description text-center hidden aling-itens-center">
-                        <h3>José Dente</h3>
+            <?php foreach ($administrative as $admin) : ?>
+                <div class="cardDentist">
+                    <div class="flex flex-column hidden">
+                        <img src="./images/jose.png" alt="">
+                    </div>
+                    <div class="description text-center hidden aling-itens-center">
+                        <h3><?= $admin['name'] ?></h3>
                     </div>
                 </div>
-            </div>
+            <?php endforeach; ?>
         </div>
-    <?php endforeach; ?>
     </div>
+
+    <!-- Dentistas -->
+    <div id="dt" class="collaborators none">
+        <div class="containerColab">
+            <?php foreach ($dentists as $dentist) : ?>
+                <div class="cardDentist">
+                    <div class="flex flex-column hidden">
+                        <img src="./images/jose.png" alt="">
+                    </div>
+                    <div class="description text-center hidden aling-itens-center">
+                        <h3><?= $dentist['name'] ?></h3>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+
+    <!-- Terceirizados -->
+    <div id="tz" class="collaborators none">
+        <div class="containerColab">
+            <?php foreach ($outsourced as $third) : ?>
+                <div class="cardDentist">
+                    <div class="flex flex-column hidden">
+                        <img src="./images/jose.png" alt="">
+                    </div>
+                    <div class="description text-center hidden aling-itens-center">
+                        <h3><?= $third['name'] ?></h3>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+
 </div>
 
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
 <script>
-    fetch("../controllers/teste.controller.php")
-        .then(response => response.json())
-        .then(sectors => {
-            console.log(sectors);
-            console.log(sectors[0]);
-        });
+$(document).ready(function() {
 
+    $('.bxHeader').click(function() {
+        const target = $(this).data('target');
 
-    $(document).ready(function() {
-        $('.admin').click(function() {
-            const collaborators = document.querySelector('#collaborators');
-            collaborators.classList.remove('none');
-        });
+        $('.collaborators').addClass('none');
+
+        $('#' + target).removeClass('none');
     });
+
+});
 </script>

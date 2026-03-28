@@ -5,6 +5,6 @@ class Functionaries{
     public $name;
     public $email;
     public $password;
-
+    public $setor;
 
 }

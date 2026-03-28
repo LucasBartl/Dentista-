@@ -53,8 +53,8 @@
             <header class="pd-page  py-3 d-flex justify-content-end align-items-center">
                 <div class="d-flex  align-items-center">
                     <ul class="d-flex gap-1.5 align-items-center">
-                        <ol><a class="text-dark text-decoration-none" href="/notification"><img src="./images/sino.png" alt=""></a></ol>
-                        <ol><a class="text-dark text-decoration-none" href="/login">Olá, usuário</a></ol>
+                        <!-- <ol><a class="text-dark text-decoration-none" href="/notification"><img src="./images/sino.png" alt=""></a></ol> -->
+                        <h5><a class="text-dark text-decoration-none" href="">Olá, <?= $_SESSION["auth"]->name ?></a></h5>
                     </ul>
                 </div>
             </header>

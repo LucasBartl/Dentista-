@@ -10,7 +10,6 @@ $config = require "../config.php";
 require "../classes/Database.php";
 require "../classes/Validation.php";
 require "../routes/routes.php";
-require "../routes/sectors.php";
 
 
 
