@@ -13,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             FROM agendamentos ag
             INNER JOIN clientes c 
                 ON c.id = ag.user_id
+                WHERE ag.status = 'aberto'
         "
     )->fetchAll(PDO::FETCH_ASSOC);
 

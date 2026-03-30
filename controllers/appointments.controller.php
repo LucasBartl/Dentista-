@@ -16,10 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     }
 
-
+    $status = 'aberto';
 
     $scheduled = $database->query(
-        query: "insert into agendamentos (date, time, procedures, dentist, obs, user_id) VALUES (:date, :time, :procedures,:dentist, :obs, :user_id) ",
+        query: "insert into agendamentos (date, time, procedures, dentist, obs, user_id, status) VALUES (:date, :time, :procedures,:dentist, :obs, :user_id, :status) ",
         class: Procedures::class,
         params: [
             'date' => $_POST['date'],
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'user_id' => $_POST['user_id'],
             'dentist' => $_POST['dentist'],
             'obs' => $_POST['obs'],
-            
+            'status' => $status
         ]
     )->fetchAll();
 

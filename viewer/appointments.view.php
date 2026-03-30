@@ -22,8 +22,8 @@
             <div class="flex flex-column  gap-2">
                 <label for="" class="fs-5">Dentista:</label>
                 <select name="dentist" id="" class="rounded-2 bd ">
-                    <option value="one">Jose Dente</option>
-                    <option value="two">Priscilla Aparelho</option>
+                    <option value="Jose Dente">Jose Dente</option>
+                    <option value="Priscilla Aparelho">Priscilla Aparelho</option>
                 </select>
             </div>
             <div class="flex  gap-2 ">

@@ -3,7 +3,7 @@ require "../models/notes.php";
 require "../models/client.php";
 require "../models/procedures.php";
 require "../models/Functionaries.php";
-
+require "../models/appointments.php";
 require "../classes/flash.php";
 require "../functions/functions.php";
 $config = require "../config.php";

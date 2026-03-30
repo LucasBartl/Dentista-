@@ -10,11 +10,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     )->fetch();
    
     $appointments = $database->query(
-        query: "SELECT * FROM agendamentos WHERE user_id = :id",
+        query: "SELECT * FROM agendamentos WHERE user_id = :id and status = 'aberto'",
         params: ['id' => $id]
     )->fetchAll();
 
-    view('data-client', ['dataClient'  => $dataClient, 'appointments' => $appointments ]);
+
+    $appointments_end = $database->query(
+        query: "SELECT * FROM agendamentos WHERE user_id = :id and status = 'Fechado' or status = 'fechado' ",
+        params: ['id' => $id]
+    )->fetchAll();
+
+
+    view('data-client', ['dataClient'  => $dataClient, 'appointments' => $appointments , 'appointments_end' => $appointments_end ]);
 }
 
 
