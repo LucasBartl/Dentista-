@@ -1,16 +1,29 @@
 <?php
+session_start();
 
-//Validando URI 
 $controller = str_replace('/', '', parse_url($_SERVER['REQUEST_URI'])['path']);
 
-//Verificao de existencia 
+if (!$controller) {
+    $controller = 'login';
+}
+$publicRoutes = ['login'];
 
-if(!$controller) $controller = 'login';
 
-if(!file_exists("../controllers/{$controller}.controller.php")){
+if (!isset($_SESSION['auth']) && !in_array($controller, $publicRoutes)) {
+    header("Location: /login");
+    exit();
+}
+
+
+if (isset($_SESSION['auth']) && $controller === 'login') {
+    header("Location: /home");
+    exit();
+}
+
+
+if (!file_exists("../controllers/{$controller}.controller.php")) {
     abort(404);
 }
 
+
 require "../controllers/{$controller}.controller.php";
-
-
