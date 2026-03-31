@@ -34,7 +34,7 @@ if (!isset($_SESSION['auth']) && !in_array($controller, $publicRoutes)) {
 
 
 if (isset($_SESSION['auth']) && $controller === 'login') {
-    header("Location: /home");
+    header("Location: /appointments");
     exit();
 }
 
